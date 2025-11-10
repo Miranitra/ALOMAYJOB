@@ -1,0 +1,216 @@
+{
+  "site": {
+    "name": "ALOMAYJOB",
+    "baseline": "Compétences, emploi & transition à Mayotte",
+    "contact": {
+      "phone": "0269 00 00 00",
+      "email": "contact@alomayjob.fr",
+      "address": "Mayotte"
+    },
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/alomayjob",
+      "facebook": "https://www.facebook.com/alomayjob"
+    }
+  },
+  "entities": [
+    {
+      "key": "alomayjob-competences",
+      "name": "ALOMAYJOB COMPÉTENCES",
+      "tagline": "Développer les talents locaux",
+      "description": "Accompagnement, diagnostics, bilans de compétences et parcours sur-mesure pour la montée en compétences à Mayotte.",
+      "photo": "assets/img/entities/emploi.jpg",
+      "logo": "assets/img/alomayjob-competences.svg"
+    },
+    {
+      "key": "eureka-mayotte",
+      "name": "EUREKA MAYOTTE",
+      "tagline": "Solutions emploi & insertion",
+      "description": "Mise en relation, ateliers emploi, coaching et dispositifs d’insertion pour accélérer le retour à l’activité.",
+      "photo": "assets/img/entities/emploi.jpg",
+      "logo": "assets/img/eureka.svg"
+    },
+    {
+      "key": "aloalo-competences",
+      "name": "ALOALO MAYOTTE COMPÉTENCES",
+      "tagline": "Formation et certification",
+      "description": "Catalogue de formations certifiantes, montée en compétences métiers et soft skills, en présentiel et distanciel.",
+      "photo": "assets/img/entities/emploi.jpg",
+      "logo": "assets/img/aloalo-competences.svg"
+    },
+    {
+      "key": "lvd-environnement",
+      "name": "LVD ENVIRONNEMENT MAYOTTE",
+      "tagline": "Transition écologique & territoires",
+      "description": "Sensibilisation, projets RSE, gestion des déchets et actions d’impact pour un développement durable.",
+      "photo": "assets/img/entities/emploi.jpg",
+      "logo": "assets/img/lvd-environnement.svg"
+    },
+    {
+      "key": "alomalavouni-competences",
+      "name": "ALOMALAVOUNI COMPÉTENCES",
+      "tagline": "Insertion par l’activité économique",
+      "description": "Structures d’insertion, chantiers-écoles et accompagnement socioprofessionnel au plus près des besoins du territoire.",
+      "photo": "assets/img/entities/emploi.jpg",
+      "logo": "assets/img/alomalavouni-competences.svg"
+    }
+  ],
+  "catalog": [
+    {
+      "id": "F-001",
+      "title": "Excel niveau 1",
+      "duration": "14h",
+      "audience": "Salariés, demandeurs d’emploi",
+      "prerequisites": "Connaissances de base en informatique",
+      "objectives": ["Prise en main d’Excel", "Mise en forme", "Formules simples"],
+      "program": "Découverte de l’interface, cellules, formats, formules de base, tri et filtres.",
+      "modalities": "Présentiel ou distanciel",
+      "price": "Sur devis",
+      "tags": ["bureautique", "excel"],
+      "status": "published"
+    },
+    {
+      "id": "F-002",
+      "title": "Excel niveau 2 (Tableaux croisés)",
+      "duration": "14h",
+      "audience": "Utilisateurs réguliers d’Excel",
+      "prerequisites": "Maîtrise des bases d’Excel",
+      "objectives": ["Fonctions avancées", "TCD", "Graphiques"],
+      "program": "Fonctions, TCD, graphiques, mises en forme conditionnelles, astuces productivité.",
+      "modalities": "Présentiel",
+      "price": "Sur devis",
+      "tags": ["bureautique", "excel", "analyse"],
+      "status": "published"
+    },
+    {
+      "id": "F-003",
+      "title": "Word & Mise en page professionnelle",
+      "duration": "7h",
+      "audience": "Tous publics",
+      "prerequisites": "Bases de Word",
+      "objectives": ["Styles", "Sommaire", "Modèles"],
+      "program": "Styles, modèles, sommaire automatique, insertion d’images et tableaux, PDF.",
+      "modalities": "Présentiel",
+      "price": "Sur devis",
+      "tags": ["bureautique", "word"],
+      "status": "published"
+    },
+    {
+      "id": "F-004",
+      "title": "Initiation à la cybersécurité",
+      "duration": "7h",
+      "audience": "Collaborateurs non-techniques",
+      "prerequisites": "Aucun",
+      "objectives": ["Phishing", "Mots de passe", "Bonnes pratiques"],
+      "program": "Menaces courantes, gestion des mots de passe, MFA, sensibilisation phishing.",
+      "modalities": "Distanciel",
+      "price": "Sur devis",
+      "tags": ["cyber", "sécurité"],
+      "status": "published"
+    },
+    {
+      "id": "F-005",
+      "title": "SST – Sauveteur Secouriste du Travail",
+      "duration": "14h",
+      "audience": "Tous publics",
+      "prerequisites": "Aucun",
+      "objectives": ["Protéger", "Alerter", "Secourir"],
+      "program": "Gestes de premiers secours, mises en situation, défibrillateur.",
+      "modalities": "Présentiel",
+      "price": "Sur devis",
+      "tags": ["sécurité", "SST"],
+      "status": "published"
+    },
+    {
+      "id": "F-006",
+      "title": "Sensibilisation tri et gestion des déchets",
+      "duration": "7h",
+      "audience": "Agents, salariés, collectivités",
+      "prerequisites": "Aucun",
+      "objectives": ["Tri à la source", "Réduction", "Bonnes pratiques"],
+      "program": "Flux de déchets, tri, consignes locales, éco-gestes en entreprise.",
+      "modalities": "Présentiel",
+      "price": "Sur devis",
+      "tags": ["environnement", "RSE", "déchets"],
+      "status": "published"
+    },
+    {
+      "id": "F-007",
+      "title": "Communication professionnelle & soft skills",
+      "duration": "14h",
+      "audience": "Jeunes actifs, salariés",
+      "prerequisites": "Aucun",
+      "objectives": ["Assertivité", "Communication orale", "Travail d’équipe"],
+      "program": "Prises de parole, écoute active, feedback, gestion des conflits.",
+      "modalities": "Présentiel ou distanciel",
+      "price": "Sur devis",
+      "tags": ["soft skills", "communication"],
+      "status": "published"
+    },
+    {
+      "id": "F-008",
+      "title": "Préparation à l’entretien d’embauche",
+      "duration": "7h",
+      "audience": "Demandeurs d’emploi",
+      "prerequisites": "Aucun",
+      "objectives": ["Pitch", "CV ciblé", "Simulation d’entretien"],
+      "program": "Analyse d’offres, pitch, simulations, posture et questions pièges.",
+      "modalities": "Présentiel",
+      "price": "Gratuit selon dispositif",
+      "tags": ["insertion", "emploi"],
+      "status": "published"
+    },
+    {
+      "id": "F-009",
+      "title": "Habilitation électrique BS/BE Manœuvre",
+      "duration": "14h",
+      "audience": "Personnel non-électricien",
+      "prerequisites": "Aucun",
+      "objectives": ["Sécurité électrique", "Réglementation"],
+      "program": "Risques électriques, appareils, EPI, procédures, évaluation finale.",
+      "modalities": "Présentiel",
+      "price": "Sur devis",
+      "tags": ["sécurité", "électricité"],
+      "status": "published"
+    },
+    {
+      "id": "F-010",
+      "title": "Gestion de projet (fondamentaux)",
+      "duration": "14h",
+      "audience": "Chefs de projet débutants",
+      "prerequisites": "Aucun",
+      "objectives": ["Cycle de vie", "Planning", "Risques"],
+      "program": "Objectifs, périmètre, WBS, planning, risques, communication, livrables.",
+      "modalities": "Distanciel",
+      "price": "Sur devis",
+      "tags": ["gestion de projet"],
+      "status": "draft"
+    }
+  ],
+  "pages": {
+    "homeIntro": "Un écosystème de 5 entités complémentaires au service des talents, des entreprises et des territoires.",
+    "missions": [
+      {
+        "title": "Accompagner",
+        "text": "Bilans, VAE, coaching, soft skills et parcours adaptés aux réalités mahoraises."
+      },
+      {
+        "title": "Former",
+        "text": "Programmes certifiants, ateliers pratiques et e-learning accessible."
+      },
+      {
+        "title": "Insérer",
+        "text": "Passerelles vers l’emploi, chantiers-écoles et partenariats entreprises."
+      },
+      {
+        "title": "Transformer",
+        "text": "Conseil RSE, sensibilisation environnementale et projets zéro déchet."
+      }
+    ],
+    "stats": [
+      { "label": "accompagnements", "value": 500 },
+      { "label": "certifications", "value": 120 },
+      { "label": "entreprises partenaires", "value": 60 },
+      { "label": "projets environnement", "value": 25 }
+    ]
+  }
+}
