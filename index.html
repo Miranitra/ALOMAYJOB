@@ -6,7 +6,7 @@
   <title>ALOMAYJOB Holding — Formation, Emploi & Développement à Mayotte</title>
   <meta name="description" content="ALOMAYJOB Holding fédère 6 entités engagées pour la formation, l’emploi et l’impact à Mayotte. Découvrez nos activités et nos valeurs.">
   <link rel="preload" as="image" href="assets/img/banner_alomayjob.webp" imagesrcset="assets/img/banner_alomayjob.webp" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="icon" href="assets/img/logo_alomayjob.png" type="image/png">
 
   <!-- Données structurées (SEO) -->
@@ -214,7 +214,7 @@
 
         <div class="entities-grid" role="list" aria-label="Cartes des entités ALOMAYJOB Holding">
           <!-- 1. ALOALO Mayotte Compétence -->
-          <a class="ecard" role="listitem" href="/entites/aloalo-mayotte-competence.html" aria-label="Voir la page ALOALO Mayotte Compétence">
+          <article class="ecard" role="listitem" aria-labelledby="ecard-aloalo-title">
             <figure class="ecard-media">
               <picture>
                 <source type="image/webp"
@@ -223,55 +223,82 @@
                     assets/img/entities/aloalo_carte-960.webp 960w,
                     assets/img/entities/aloalo_carte-1280.webp 1280w"
                   sizes="(max-width: 900px) 100vw, 31.5vw">
-                <img src="assets/img/entities/aloalo_carte-960.webp" alt="ALOALO Mayotte Compétence — centre de formation" loading="lazy" decoding="async">
+                <img src="assets/img/entities/aloalo_carte-960.webp"
+                    alt="ALOALO Mayotte Compétence — centre de formation"
+                    loading="lazy" decoding="async">
               </picture>
             </figure>
+
             <div class="ecard-body">
-              <h3>ALOALO Mayotte Compétence</h3>
-              <p>Centre de formation : catalogues certifiants, montée en compétences (métiers & soft skills), présentiel et distanciel.</p>
+              <h3 id="ecard-aloalo-title">ALOALO Mayotte Compétence</h3>
+              <h4 class="ecard-subtitle">Centre de formation</h4>
+              <p>Catalogue de formations certifiantes, montée en compétences (métiers &amp; soft skills), présentiel et distanciel.</p>
             </div>
-          </a>
+
+            <!-- Lien overlay qui rend toute la carte cliquable -->
+            <a class="ecard-link" href="/entites/aloalo-mayotte-competence.html"
+              aria-label="Voir la page ALOALO Mayotte Compétence"></a>
+          </article>
+
 
           <!-- 2. EUREKA Mayotte -->
-          <a class="ecard" role="listitem" href="/entites/eureka-mayotte.html" aria-label="Voir la page EUREKA Mayotte">
-            <figure class="ecard-media">
-              <picture>
-                <source type="image/webp"
-                  srcset="
-                    assets/img/entities/aloalo_carte-640.webp 640w,
-                    assets/img/entities/aloalo_carte-960.webp 960w,
-                    assets/img/entities/aloalo_carte-1280.webp 1280w"
-                  sizes="(max-width: 900px) 100vw, 31.5vw">
-                <img src="assets/img/entities/aloalo_carte-960.webp" alt="EUREKA Mayotte — agence d’intérim" loading="lazy" decoding="async">
-              </picture>
-            </figure>
-            <div class="ecard-body">
-              <h3>EUREKA Mayotte</h3>
-              <p>Intérim & insertion : mise en relation, ateliers emploi, coaching et dispositifs pour accélérer le retour à l’activité.</p>
-            </div>
-          </a>
+          <article class="ecard" role="listitem" aria-labelledby="ecard-aloalo-title">
+              <figure class="ecard-media">
+                <picture>
+                  <source type="image/webp"
+                    srcset="
+                      assets/img/entities/aloalo_carte-640.webp 640w,
+                      assets/img/entities/aloalo_carte-960.webp 960w,
+                      assets/img/entities/aloalo_carte-1280.webp 1280w"
+                    sizes="(max-width: 900px) 100vw, 31.5vw">
+                  <img src="assets/img/entities/aloalo_carte-960.webp"
+                      alt="ALOALO Mayotte Compétence — centre de formation"
+                      loading="lazy" decoding="async">
+                </picture>
+              </figure>
+
+              <div class="ecard-body">
+                <h3>EUREKA Mayotte</h3>
+                <h4 class="ecard-subtitle">Agence d’intérim & insertion</h4>
+                <p>Mise en relation, ateliers emploi, coaching et dispositifs d’insertion pour accélérer le retour à l’activité professionnelle.</p>
+              </div>
+
+          <!-- Lien overlay qui rend toute la carte cliquable -->
+          <a class="ecard-link" href="/entites/aloalo-mayotte-competence.html"
+            aria-label="Voir la page ALOALO Mayotte Compétence"></a>
+        </article>
+
 
           <!-- 3. ALOMAYJOB Compétences -->
-          <a class="ecard" role="listitem" href="/entites/alomayjob-competences.html" aria-label="Voir la page ALOMAYJOB Compétences">
-            <figure class="ecard-media">
-              <picture>
-                <source type="image/webp"
-                  srcset="
-                    assets/img/entities/aloalo_carte-640.webp 640w,
-                    assets/img/entities/aloalo_carte-960.webp 960w,
-                    assets/img/entities/aloalo_carte-1280.webp 1280w"
-                  sizes="(max-width: 900px) 100vw, 31.5vw">
-                <img src="assets/img/entities/aloalo_carte-960.webp" alt="ALOMAYJOB Compétences — accompagnement et bilans" loading="lazy" decoding="async">
-              </picture>
-            </figure>
-            <div class="ecard-body">
-              <h3>ALOMAYJOB Compétences</h3>
-              <p>Accompagnement, diagnostics, bilans de compétences et parcours sur-mesure pour la montée en compétences à Mayotte.</p>
-            </div>
-          </a>
+          <article class="ecard" role="listitem" aria-labelledby="ecard-aloalo-title">
+              <figure class="ecard-media">
+                <picture>
+                  <source type="image/webp"
+                    srcset="
+                      assets/img/entities/aloalo_carte-640.webp 640w,
+                      assets/img/entities/aloalo_carte-960.webp 960w,
+                      assets/img/entities/aloalo_carte-1280.webp 1280w"
+                    sizes="(max-width: 900px) 100vw, 31.5vw">
+                  <img src="assets/img/entities/aloalo_carte-960.webp"
+                      alt="ALOALO Mayotte Compétence — centre de formation"
+                      loading="lazy" decoding="async">
+                </picture>
+              </figure>
+
+              <div class="ecard-body">
+                <h3>ALOMAYJOB Compétences</h3>
+                <h4 class="ecard-subtitle">Accompagnement et bilans de compétences</h4>
+                <p>Diagnostics, bilans personnalisés et parcours sur-mesure pour la montée en compétences et la sécurisation des parcours à Mayotte.</p>
+              </div>
+
+            <!-- Lien overlay qui rend toute la carte cliquable -->
+            <a class="ecard-link" href="/entites/aloalo-mayotte-competence.html"
+              aria-label="Voir la page ALOALO Mayotte Compétence"></a>
+          </article>
+
 
           <!-- 4. LVD Environnement -->
-          <a class="ecard" role="listitem" href="/entites/lvd-environnement.html" aria-label="Voir la page LVD Environnement">
+          <article class="ecard" role="listitem" aria-labelledby="ecard-aloalo-title">
             <figure class="ecard-media">
               <picture>
                 <source type="image/webp"
@@ -280,17 +307,26 @@
                     assets/img/entities/aloalo_carte-960.webp 960w,
                     assets/img/entities/aloalo_carte-1280.webp 1280w"
                   sizes="(max-width: 900px) 100vw, 31.5vw">
-                <img src="assets/img/entities/aloalo_carte-960.webp" alt="LVD Environnement — sensibilisation et projets RSE" loading="lazy" decoding="async">
+                <img src="assets/img/entities/aloalo_carte-960.webp"
+                    alt="ALOALO Mayotte Compétence — centre de formation"
+                    loading="lazy" decoding="async">
               </picture>
             </figure>
+
             <div class="ecard-body">
               <h3>LVD Environnement</h3>
-              <p>Sensibilisation, projets RSE, gestion des déchets et actions d’impact pour un développement durable.</p>
+              <h4 class="ecard-subtitle">Environnement & développement durable</h4>
+              <p>Sensibilisation, projets RSE, gestion des déchets et actions d’impact pour un territoire plus responsable et durable.</p>
             </div>
-          </a>
+
+            <!-- Lien overlay qui rend toute la carte cliquable -->
+            <a class="ecard-link" href="/entites/aloalo-mayotte-competence.html"
+              aria-label="Voir la page ALOALO Mayotte Compétence"></a>
+          </article>
+
 
           <!-- 5. ALOMALAVOUNI Compétences -->
-          <a class="ecard" role="listitem" href="/entites/alomalavouni-competences.html" aria-label="Voir la page ALOMALAVOUNI Compétences">
+          <article class="ecard" role="listitem" aria-labelledby="ecard-aloalo-title">
             <figure class="ecard-media">
               <picture>
                 <source type="image/webp"
@@ -299,14 +335,23 @@
                     assets/img/entities/aloalo_carte-960.webp 960w,
                     assets/img/entities/aloalo_carte-1280.webp 1280w"
                   sizes="(max-width: 900px) 100vw, 31.5vw">
-                <img src="assets/img/entities/aloalo_carte-960.webp" alt="ALOMALAVOUNI Compétences — structures d’insertion et chantiers-écoles" loading="lazy" decoding="async">
+                <img src="assets/img/entities/aloalo_carte-960.webp"
+                    alt="ALOALO Mayotte Compétence — centre de formation"
+                    loading="lazy" decoding="async">
               </picture>
             </figure>
+
             <div class="ecard-body">
               <h3>ALOMALAVOUNI Compétences</h3>
-              <p>Structures d’insertion, chantiers-écoles et accompagnement socioprofessionnel au plus près des besoins du territoire.</p>
+              <h4 class="ecard-subtitle">Insertion & chantiers-écoles</h4>
+              <p>Structures d’insertion, chantiers-écoles et accompagnement socioprofessionnel au plus près des besoins du territoire mahorais.</p>
             </div>
-          </a>
+
+            <!-- Lien overlay qui rend toute la carte cliquable -->
+            <a class="ecard-link" href="/entites/aloalo-mayotte-competence.html"
+              aria-label="Voir la page ALOALO Mayotte Compétence"></a>
+          </article>
+
         </div>
       </div>
     </section>
