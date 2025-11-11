@@ -521,14 +521,32 @@ a:hover{text-decoration:underline}
 .ecard-body a { pointer-events: auto; } /* au cas où tu mettes d'autres vrais liens internes plus tard */
 
 /* Figure sans marges parasites + image bord à bord */
-.ecard-media { margin: 0; padding: 0; overflow: hidden; }
+/* ===== Effet zoom de l’image au survol ===== */
+
+/* On garde le conteneur pour masquer le débordement */
+.ecard-media {
+  position: relative;
+  overflow: hidden; /* ✅ cache l’image qui dépasse pendant le zoom */
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* L’image reste à 100 % par défaut */
 .ecard-media img {
   display: block;
   width: 100%;
-  height: 240px;          /* ou aspect-ratio: 16/9; */
+  height: 240px; /* ou aspect-ratio si tu préfères */
   object-fit: cover;
   object-position: center;
+  transition: transform 0.6s ease; /* ✅ transition douce */
 }
+
+/* Effet zoom au survol */
+.ecard:hover .ecard-media img {
+  transform: scale(1.08); /* ✅ zoom léger */
+}
+
 
 
 
@@ -566,6 +584,100 @@ a:hover{text-decoration:underline}
   .about-grid{grid-template-columns: 1fr}
   .about-media{order:-1}          /* l’image passe au-dessus du texte */
 }
+
+
+/* ===== Chiffres clés ===== */
+.stats {
+  padding-block: 80px;
+  background: #f7f3ef; /* fond beige clair */
+}
+
+.stats-head {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+.stats-intro {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* Grille responsive */
+/* ===== Chiffres clés - Cartes uniformes ===== */
+/* ===== Chiffres clés - Cartes uniformes ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ✅ colonnes fixes et uniformes */
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+}
+
+/* Chaque carte a la même taille */
+.stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* ✅ centre verticalement le contenu */
+  align-items: center;        /* ✅ centre horizontalement */
+  background: #fff;
+  border-radius: 18px;
+  width: 100%;
+  aspect-ratio: 1 / 1;        /* ✅ rend chaque carte carrée (même largeur et hauteur) */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform .3s ease, box-shadow .3s ease;
+  padding: 20px;
+}
+
+/* Effet de survol */
+.stat:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Icône */
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+/* Valeur */
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--brand);
+  margin: 0;
+}
+
+/* Label */
+.stat-label {
+  font-size: 0.95rem;
+  color: #5a4b3f;
+  margin: 6px 0 0;
+  line-height: 1.4;
+}
+
+/* Responsive : sur petit écran, conserve la forme mais réduit légèrement */
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat {
+    aspect-ratio: 1 / 1;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat {
+    aspect-ratio: auto;
+    min-height: 200px;
+  }
+}
+
 
 
 /* ===== Responsivité ===== */
