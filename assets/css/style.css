@@ -751,6 +751,20 @@ a:hover{text-decoration:underline}
 /* Ancre confortable Contact */
 #contact { scroll-margin-top: 90px; }
 
+.form-status {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.form-status.success {
+  color: #1b7f3b; /* vert */
+}
+
+.form-status.error {
+  color: #c0392b; /* rouge */
+}
+
+
 /* ===== Footer ===== */
 .site-footer {
   background: #2f241b; /* brun gris profond */
