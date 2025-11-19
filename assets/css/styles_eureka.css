@@ -285,17 +285,30 @@ a {
 
 /* ========== Section Présentation rapide ========== */
 
+/* --- TITRE DE SECTION (section-intro) --- */
 .section-intro {
-  padding: 4rem 0 4.5rem;
-  background-color: #f9fafb;
+  margin-top: 3rem;   /* tu peux tester 2rem, 3rem, 4rem selon ton goût */
+  
 }
+
+
+.section-intro h2,
+.section-intro .section-intro-title {
+  font-weight: 600;
+  text-align: left;              
+  margin-bottom: 1.5rem !important;
+  position: relative;
+  display: inline-block;         /* important pour que le trait reste sous le titre */
+}
+
 
 .section-intro-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
-  gap: 3rem;
-  align-items: flex-start;
+  grid-template-columns: 1fr 1.4fr;  /* ou ta valeur actuelle */
+  gap: 2.5rem;
+  align-items: center;               /* ⭐ centre les 2 colonnes verticalement */
 }
+
 
 .section-intro-text h2 {
   font-size: 1.8rem;
@@ -303,13 +316,30 @@ a {
   color: #111827;
 }
 
+/* --- PETIT TITRE TYPE TAG (style section titre) --- */
 .intro-tag {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: #2563eb;
-  margin-bottom: 0.4rem;
+  font-size: 2rem !important;
+  font-weight: 700;
+  text-transform: none;       /* optionnel : tu peux garder uppercase */
+  letter-spacing: normal;     /* optionnel */
+  color: #2563eb !important;
+  margin-bottom: 1.5rem !important;
+  position: relative;
+  display: inline-block;
 }
+
+.intro-tag::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 3px;
+}
+
+
 
 .intro-lead {
   font-size: 1rem;
@@ -475,16 +505,35 @@ a {
 
 /* Section Secteurs */
 .section-secteurs {
-  margin-top: 4rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
-.secteurs-title {
-  font-size: 2rem;
+/* --- TITRE SECTEURS D’ACTIVITÉ --- */
+.section-secteurs .secteurs-title {
+  font-size: 2rem !important;       /* remet la bonne taille */
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #0f172a;
+  text-align: center;
+  color: #2563eb !important;        /* bleu Eureka */
+  margin-bottom: 1.8rem !important; /* remet un bel espace sous le titre */
+  position: relative;
 }
+
+/* Trait centré sous le titre */
+.section-secteurs .secteurs-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 80px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 3px;
+}
+
+
+
 
 .secteurs-subtitle {
   max-width: 700px;
@@ -493,57 +542,843 @@ a {
   color: #475569;
 }
 
-/* Grille */
+/* Grille responsive */
 .secteurs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.75rem;
 }
 
-/* Carte secteur */
+/* Carte générique */
 .secteur-card {
+  position: relative;
+  border-radius: 1.2rem;
+  padding: 1.9rem 1.4rem 1.7rem;
+  color: #0f172a;
   background: #ffffff;
-  border-radius: 1rem;
-  padding: 1.75rem 1.25rem;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-  border: 1px solid rgba(148, 163, 184, 0.3);
-  text-align: center;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-/* Icône */
+/* Conteneur de l’icône : pastille ronde blanche */
 .secteur-icon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  display: inline-block;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem; /* emoji ou svg */
+  margin-bottom: 0.9rem;
 }
 
 /* Titre */
 .secteur-card h3 {
   font-size: 1rem;
   font-weight: 600;
-  color: #0f172a;
-  margin-top: 0.25rem;
+  margin: 0;
 }
 
-/* Hover */
+/* Effet hover */
 .secteur-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);
-  background: #f8fbff;
-  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.28);
 }
 
 
-/* ========== Footer ========== */
+/* ----- Section Secteurs : Styles généraux ----- */
 
-.site-footer {
-  border-top: 1px solid #e5e7eb;
-  padding: 1.2rem 0;
-  margin-top: 3rem;
-  font-size: 0.85rem;
-  color: #6b7280;
+.secteur-card--btp {
+  background: linear-gradient(135deg, #1d4ed8, #60a5fa);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.55);
+  color: #f9fafb;
+}
+
+.secteur-card--admin {
+  background: linear-gradient(135deg, #ea580c, #fdba74);
+  box-shadow: 0 18px 40px rgba(234, 88, 12, 0.55);
+  color: #111827;
+}
+
+.secteur-card--transport {
+  background: linear-gradient(135deg, #16a34a, #86efac);
+  box-shadow: 0 18px 40px rgba(22, 163, 74, 0.55);
+  color: #022c22;
+}
+
+.secteur-card--commerce {
+  background: linear-gradient(135deg, #e11d48, #fb7185);
+  box-shadow: 0 18px 40px rgba(225, 29, 72, 0.55);
+  color: #fdf2f8;
+}
+
+.secteur-card--nettoyage {
+  background: linear-gradient(135deg, #0ea5e9, #7dd3fc);
+  box-shadow: 0 18px 40px rgba(14, 165, 233, 0.55);
+  color: #0f172a;
+}
+
+.secteur-card--securite {
+  background: linear-gradient(135deg, #0f172a, #1f2937);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+  color: #e5e7eb;
+}
+
+.secteur-card--restauration {
+  background: linear-gradient(135deg, #f59e0b, #facc15);
+  box-shadow: 0 18px 40px rgba(245, 158, 11, 0.55);
+  color: #291507;
+}
+
+.secteur-card--social {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  box-shadow: 0 18px 40px rgba(99, 102, 241, 0.55);
+  color: #eef2ff;
+}
+
+.secteur-card--agri {
+  background: linear-gradient(135deg, #15803d, #4ade80);
+  box-shadow: 0 18px 40px rgba(21, 128, 61, 0.55);
+  color: #ecfdf3;
+}
+
+/* Pastille icône sur fond coloré */
+.secteur-card--btp .secteur-icon,
+.secteur-card--admin .secteur-icon,
+.secteur-card--transport .secteur-icon,
+.secteur-card--commerce .secteur-icon,
+.secteur-card--nettoyage .secteur-icon,
+.secteur-card--securite .secteur-icon,
+.secteur-card--restauration .secteur-icon,
+.secteur-card--social .secteur-icon,
+.secteur-card--agri .secteur-icon {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+/***** Couleur de fonds de la section secteur ********/
+.section-secteurs {
+    background: #eaf3ff;   /* bleu très clair */
+}
+
+.section-secteurs h2 {
+  color: #0f172a;
+}
+
+.section-secteurs .secteurs-subtitle {
+  color: #475569;
+}
+
+
+
+/* ----- Section Offres d'emploi récentes ----- */
+
+.section-offres {
+  padding: 4rem 1rem;
+  max-width: 1120px;
+  margin: 3rem auto 0;
+}
+
+.offres-title {
+  font-size: 1.8rem;
+  font-weight: 700;
   text-align: center;
+  margin-bottom: 1rem;
+  color: #2563eb;
+  position: relative;
+}
+
+/* Trait centré */
+.offres-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;                /* positionnement au centre */
+  transform: translateX(-50%); /* recalcule pour centrer parfaitement */
+  bottom: -10px;            /* espace sous le titre */
+  width: 60px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 3px;
+}
+
+
+
+.offres-subtitle {
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  font-size: 0.98rem;
+  color: #475569;
+}
+
+/* Grille des cartes */
+
+.offres-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+
+/* Carte offre */
+
+.offre-card {
+  background: #ffffff;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.10);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.offre-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.18);
+  border-color: rgba(37, 99, 235, 0.5);
+}
+
+/* Image en haut de la carte */
+
+.offre-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;      /* garde le même ratio pour toutes les cartes */
+  overflow: hidden;
+}
+
+.offre-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Contenu en bas */
+
+.offre-body {
+  padding: 1.1rem 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.offre-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #0f172a;
+}
+
+.offre-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.offre-desc {
+  margin: 0.2rem 0 0.3rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* Lien "Voir l’offre" */
+
+.offre-link {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.offre-link:hover {
+  text-decoration: underline;
+}
+
+/* Lien "Voir toutes nos offres" */
+
+.offres-actions {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.offres-all-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.offres-all-link::after {
+  content: " →";
+}
+
+
+.offre-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden; /* indispensable pour cacher l’image quand elle zoom */
+}
+
+.offre-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease; /* animation fluide */
+}
+
+/* Effet zoom au survol */
+.offre-card:hover .offre-image img {
+  transform: scale(1.08); /* zoom de 8% propre et luxueux */
+}
+
+/* ----- Section Pourquoi + Équipe + Processus ----- */
+
+/* --- TITRE DE SECTION : Pourquoi EUREKA --- */
+.why-col h2 {
+  font-size: 2rem !important;
+  font-weight: 700;
+  text-align: left;
+  color: #2563eb !important;
+  margin-bottom: 1.5rem !important;
+  position: relative;
+  display: inline-block;
+}
+
+.why-col h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 3px;
+}
+
+
+/* SECTION PLEINE LARGEUR */
+.section-why-process {
+  background: #eaf3ff;
+  padding: 1rem 0;     /* réduit et harmonisé */
+  margin-top: 2.5rem;    /* espace raisonnable depuis la section précédente */
+}
+
+/* CONTENU CENTRÉ */
+.why-process-inner {
+  max-width: 1120px;       /* le contenu reste centré */
+  margin: 0 auto;          /* centrer horizontalement */
+  padding: 0 1rem;         /* petite marge interne à gauche/droite */
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr) minmax(0, 1.1fr);
+  gap: 2.25rem;
+  align-items: flex-start;
+}
+
+
+/* Colonne 1 : Pourquoi EUREKA - EQUIPE - PROCESSUS DE RECRUTEMENT*/
+
+.why-col h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: #0f172a;
+}
+
+.why-intro {
+  margin: 0 0 1.2rem;
+  font-size: 0.98rem;
+  color: #475569;
+}
+
+.why-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.why-list li {
+  position: relative;
+  padding-left: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #1f2937;
+}
+
+.why-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0edff;
+  color: #1d4ed8;
+}
+
+/* Colonne 2 : Carte équipe */
+
+.team-card {
+  background: #ffffff;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-self: center;  /* ⭐ centre UNIQUEMENT la carte équipe */
+}
+
+.team-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.team-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+/* Zoom léger au survol de la carte équipe */
+.team-card:hover .team-image img {
+  transform: scale(1.05);
+}
+
+.team-body {
+  padding: 1.3rem 1.3rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.team-body h2 {
+  font-size: 1.3rem;
+  margin: 0 0 0.2rem;
+  color: #0f172a;
+}
+
+.team-body p {
+  margin: 0;
+  font-size: 0.93rem;
+  color: #4b5563;
+}
+
+.team-highlight {
+  margin-top: 0.3rem;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+.team-body h2.team-title-colored {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.team-body .team-highlight-colored {
+  color: #1d4ed8;
+  font-weight: 700;
+  margin-top: 0.3rem;
+}
+
+
+
+/* Colonne 3 : Processus */
+
+.process-col h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: #0f172a;
+}
+
+.process-intro {
+  margin: 0 0 1.2rem;
+  font-size: 0.98rem;
+  color: #475569;
+}
+
+.process-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.process-steps li {
+  position: relative;
+  padding-left: 2.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.process-steps li h3 {
+  font-size: 1rem;
+  margin: 0 0 0.2rem;
+  color: #0f172a;
+}
+
+.process-steps li p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* Pastille numérotée */
+
+.process-steps li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  background: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
+}
+
+/* Chiffre dans la pastille via le titre */
+
+.process-steps li:nth-child(1) h3::before,
+.process-steps li:nth-child(2) h3::before,
+.process-steps li:nth-child(3) h3::before {
+  position: absolute;
+  left: 0.45rem;
+  top: 0.28rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+.process-steps li:nth-child(1) h3::before { content: "1"; }
+.process-steps li:nth-child(2) h3::before { content: "2"; }
+.process-steps li:nth-child(3) h3::before { content: "3"; }
+
+/* --- TITRE DE LA COLONNE : Processus de recrutement --- */
+.process-col h2 {
+  font-size: 2rem !important;
+  font-weight: 700;
+  text-align: left;
+  color: #2563eb !important;     /* bleu Eureka */
+  margin-bottom: 1.5rem !important;
+  position: relative;
+  display: inline-block;         /* permet au trait de rester sous le texte */
+}
+
+/* Trait moderne sous le titre */
+.process-col h2::after {
+  content: "";
+  position: absolute;
+  left: 0;                       /* aligné à gauche */
+  bottom: -10px;
+  width: 80px;
+  height: 3px;
+  background: #2563eb;           /* bleu Eureka */
+  border-radius: 3px;
+}
+
+
+/*******CONTACT**********/
+/* ===== Contact (formulaire + carte) ===== */
+.contact .section-title {
+  position: relative;
+  color: #2563eb;
+}
+
+.contact .section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 3px;
+}
+
+
+.contact {
+  padding-block: 80px;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* formulaire / carte */
+  gap: 36px;
+  align-items: start;
+}
+.contact-map {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-map {
+    min-height: 320px;
+  }
+}
+
+/* Formulaire */
+.contact-intro {
+  color: var(--muted);
+  margin: 6px 0 18px;
+}
+.contact-form {
+  display: grid;
+  gap: 14px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.form-field {
+  display: grid;
+  gap: 6px;
+}
+.form-field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e7e1d9;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.form-field textarea { resize: vertical; }
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #2563eb !important; /* ⇦ BLEU EUREKA */
+  box-shadow: 0 0 0 3px rgba(90,56,42,.12);
+}
+.form-consent {
+  margin-top: 4px;
+}
+.checkbox {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: .95rem; color: var(--text);
+}
+.checkbox input {
+  margin-top: 4px;
+}
+.form-actions {
+  display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+  margin-top: 6px;
+}
+.form-note { color: var(--muted); font-size: .9rem; }
+
+/* Anti-spam */
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Réseaux sociaux (Contact et footer) */
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+.social-links li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  transition: color .3s ease, transform .3s ease;
+}
+.social-links li a:hover {
+  color: var(--brand);
+  transform: translateY(-2px);
+}
+.social-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* STYLE TITRE Contact — même taille que les autres titres */
+#titre-contact.section-title {
+  font-size: 2rem !important;       /* même taille que les H2 des autres sections */
+  font-weight: 700;
+  color: #2563eb !important;        /* bleu Eureka / corporate */
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Trait bleu sous le titre Contact */
+#titre-contact.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;                      /* longueur du trait */
+  height: 3px;
+  background: #2563eb;              /* bleu Eureka */
+  border-radius: 3px;
+}
+
+/* Responsive Contact */
+@media (max-width: 560px){
+  .contact { padding-block: 56px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* Ancre confortable Contact */
+#contact { scroll-margin-top: 90px; }
+
+.form-status {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.form-status.success {
+  color: #1b7f3b; /* vert */
+}
+
+.form-status.error {
+  color: #c0392b; /* rouge */
+}
+
+
+/* ----- Responsive ----- */
+
+@media (max-width: 960px) {
+  .why-process-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .section-why-process {
+    padding: 3rem 1rem;
+  }
+}
+
+
+/* ----- Responsive ----- */
+
+@media (max-width: 900px) {
+  .offres-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ----- Responsive ----- */
+
+@media (max-width: 900px) {
+  .offres-process-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .section-offres-process {
+    padding: 3rem 1rem;
+  }
+}
+
+
+/* ===== Footer ===== */
+.site-footer {
+  background: #1F435F;   /* ← bleu exact de la bannière */
+  color: #f5efe7;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+.footer-brand p {
+  color: #ddd0c4;
+  line-height: 1.6;
+}
+.footer-nav h3,
+.footer-contact h3 {
+  color: #f0cfa3;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+.footer-nav ul,
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-nav ul li,
+.footer-contact ul li {
+  margin: 6px 0;
+}
+.footer-nav a,
+.footer-contact a {
+  color: #f5efe7;
+  text-decoration: none;
+}
+.footer-nav a:hover,
+.footer-contact a:hover {
+  color: #f0cfa3;
+}
+
+/* Réseaux dans le footer : texte clair */
+.site-footer .social-links li a {
+  color: #f0cfa3;
+}
+.site-footer .social-links li a:hover {
+  color: #ffffff;
+}
+
+/* Ligne du bas */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  color: #d8cfc4;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.footer-bottom a {
+  color: #f0cfa3;
+  text-decoration: none;
+}
+.footer-bottom a:hover {
+  color: #fff;
 }
 
 /* ========== Responsivité ========== */
