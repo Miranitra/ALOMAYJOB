@@ -1,0 +1,689 @@
+/* ===========================
+   VARIABLES GLOBALES
+   =========================== */
+:root {
+    --eureka-bleu: #0068a8;
+    --eureka-bleu-fonce: #004774;
+    --eureka-dore: #d4a64b;
+    --texte-principal: #1f2933;
+    --fond-clair: #f9fafb;
+    --container-max: 1200px;
+    --transition-base: 0.2s ease;
+}
+
+/* ===========================
+   RESET SIMPLE
+   =========================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--texte-principal);
+    background-color: #ffffff;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===========================
+   LAYOUT GÉNÉRAL
+   =========================== */
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ===========================
+   HEADER + NAV
+   =========================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Header : logo + menu alignés sur la même ligne */
+.header-inner,
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 64px;
+}
+
+/* Logo (image + texte EUREKA / Mayotte) */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.logo span {
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 55px;
+  width: auto;
+}
+
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-main {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #0f5fff; /* bleu identique à ton accueil */
+  text-transform: uppercase;
+}
+
+.logo-sub {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #6b7280; /* gris identique à ton accueil */
+}
+
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #4b5563;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition-base), border-color var(--transition-base);
+}
+
+.main-nav a:hover {
+    color: var(--eureka-bleu);
+}
+
+.main-nav a.active,
+.main-nav a[aria-current="page"] {
+    color: var(--eureka-bleu);
+    border-color: var(--eureka-dore);
+}
+
+/* ===========================
+   HERO CANDIDAT
+   =========================== */
+.hero {
+    padding: 40px 0 48px;
+}
+
+.hero-candidat {
+    background: radial-gradient(circle at top left, #e5f0ff, #ffffff);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+    gap: 32px;
+    align-items: center;
+}
+
+.hero-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--eureka-dore);
+    margin: 0 0 8px;
+}
+
+/* clamp = s’adapte aux très grands et très petits écrans */
+.hero h1 {
+    font-size: clamp(1.9rem, 2.4vw + 1rem, 3rem);
+    line-height: 1.2;
+    color: var(--eureka-bleu-fonce);
+    margin: 0 0 10px;
+}
+
+.hero-text {
+    margin: 0 0 20px;
+    font-size: 0.98rem;
+    color: #4b5563;
+    max-width: 540px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ===========================
+   BOUTONS
+   =========================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color var(--transition-base),
+                color var(--transition-base),
+                transform var(--transition-base),
+                box-shadow var(--transition-base);
+}
+
+.btn-primary {
+    background-color: var(--eureka-bleu);
+    color: #ffffff;
+    border-color: var(--eureka-bleu);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary:hover {
+    background-color: var(--eureka-bleu-fonce);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.btn-outline {
+    background-color: #ffffff;
+    color: var(--eureka-bleu);
+    border-color: var(--eureka-bleu);
+}
+
+.btn-outline:hover {
+    background-color: var(--eureka-bleu);
+    color: #ffffff;
+}
+
+/* ===========================
+   IMAGE HERO
+   =========================== */
+.hero-image {
+    margin: 0;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+}
+
+/* ======= SECTION OFFRES D'EMPLOI ======= */
+
+/* ======= SECTION OFFRES D'EMPLOI ======= */
+
+.section-offres {
+  padding: 40px 0 56px;
+  background-color: #ffffff;
+}
+
+.section-offres .section-header {
+  max-width: 640px;
+  margin-bottom: 24px;
+}
+
+.section-offres .section-title {
+  font-size: 1.6rem;
+  margin: 0 0 8px;
+  color: #004774; /* bleu foncé EUREKA */
+}
+
+.section-offres .section-intro {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* Filtres */
+
+.offres-filtres {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.5fr) minmax(0, 1.5fr) auto;
+  gap: 0.75rem;
+  align-items: flex-end;
+  padding: 16px;
+  margin: 24px 0 16px;
+  background-color: #f3f4f6;
+  border-radius: 16px;
+}
+
+.filtre-champ {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filtre-champ label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+
+.filtre-champ input,
+.filtre-champ select {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.filtre-champ input:focus,
+.filtre-champ select:focus {
+  border-color: #0f5fff;
+  box-shadow: 0 0 0 2px rgba(15, 95, 255, 0.15);
+}
+
+.filtre-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Tags secteurs */
+
+.secteurs-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.secteurs-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.secteurs-liste {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.secteur-tag {
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  background-color: #ffffff;
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.secteur-tag:hover {
+  border-color: #0f5fff;
+  color: #0f5fff;
+}
+
+.secteur-tag-actif {
+  background-color: #0f5fff;
+  border-color: #0f5fff;
+  color: #ffffff;
+}
+
+/* Grille des cartes */
+
+.offres-liste {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Carte offre */
+
+.offre-carte {
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.offre-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.offre-titre {
+  font-size: 1rem;
+  margin: 0;
+  color: #004774;
+}
+
+.offre-localisation {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.offre-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #4b5563;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.offre-extrait {
+  margin: 6px 0 12px;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.offre-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.offre-reference {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.btn-offre {
+  padding-inline: 14px;
+  font-size: 0.85rem;
+}
+
+/* Badge secteur : base + couleurs simples */
+
+.offre-secteur-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* Animation au survol des cartes */
+.offre-carte {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.offre-carte:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.10);
+}
+
+
+
+/* Couleurs par secteur */
+.secteur-btp {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.secteur-admin {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.secteur-logistique {
+  background-color: #dcfce7;
+  color: #047857;
+}
+
+.secteur-proprete {
+  background-color: #f3e8ff;
+  color: #6d28d9;
+}
+
+.secteur-restauration {
+  background-color: #fff7ed;
+  color: #c2410c;
+}
+
+.secteur-sante {
+  background-color: #f0f9ff;
+  color: #0369a1;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .offres-liste {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .offres-filtres {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr) minmax(0, 1.4fr);
+  }
+
+  .filtre-actions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-offres {
+    padding: 32px 0 44px;
+  }
+
+  .offres-filtres {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .offres-liste {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .filtre-actions .btn {
+    width: 100%;
+  }
+}
+
+
+/* ======= PAGINATION OFFRES ======= */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.pagination-btn {
+  border: 1px solid #d1d5db;
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.pagination-btn:hover:not([disabled]) {
+  border-color: #0f5fff;
+  color: #0f5fff;
+}
+
+.pagination-btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-pages {
+  display: flex;
+  gap: 6px;
+}
+
+.page-number {
+  border: 1px solid #d1d5db;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: 0.15s ease;
+  min-width: 36px;
+  text-align: center;
+}
+
+.page-number:hover {
+  border-color: #0f5fff;
+  color: #0f5fff;
+}
+
+.page-number.active {
+  background: #0f5fff;
+  border-color: #0f5fff;
+  color: #fff;
+}
+
+
+
+
+/* ===========================
+   FOOTER
+   =========================== */
+.site-footer {
+    background-color: var(--fond-clair);
+    border-top: 1px solid #e5e7eb;
+    margin-top: 40px;
+}
+
+.footer-text {
+    font-size: 0.85rem;
+    color: #6b7280;
+    text-align: center;
+    padding: 16px 0;
+    margin: 0;
+}
+
+/* ===========================
+   BREAKPOINTS RESPONSIVE
+   =========================== */
+
+/* 1) Très grands écrans (TV / 2K / 4K) */
+@media (min-width: 1440px) {
+    .hero {
+        padding: 56px 0 64px;
+    }
+
+    .hero-text {
+        font-size: 1.05rem;
+    }
+}
+
+/* 2) Tablettes / petits laptops (≤ 1024px) */
+@media (max-width: 1024px) {
+    .hero-inner {
+        gap: 24px;
+    }
+
+    .header-inner {
+        gap: 16px;
+    }
+
+    .main-nav ul {
+        gap: 18px;
+        font-size: 0.9rem;
+    }
+}
+
+/* 3) Tablettes et grands smartphones en mode portrait (≤ 768px) */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        height: 52px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 28px 0 36px;
+    }
+
+    .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero-image {
+        order: -1; /* image au-dessus du texte */
+    }
+
+    .hero-actions {
+        gap: 10px;
+    }
+}
+
+/* 4) Petits smartphones (≤ 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem; /* un peu plus compact */
+    }
+
+    .hero-text {
+        font-size: 0.92rem;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

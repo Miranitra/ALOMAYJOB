@@ -1126,6 +1126,36 @@ a {
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
+
+/* ----- Bouton Envoyer (section Contact) ----- */
+/* ----- Bouton Envoyer (style Hero arrondi) ----- */
+.contact .btn-ghost {
+  background-color: #1F435F;   /* bleu bannière */
+  color: #ffffff;
+  padding: 12px 32px;          /* légèrement plus large pour arrondi */
+  border-radius: 40px;         /* <<< même style arrondi que le Hero */
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color .25s ease, transform .25s ease, box-shadow .25s ease;
+  display: inline-block;
+}
+
+/* Hover */
+.contact .btn-ghost:hover {
+  background-color: #2a577a;  /* bleu clair */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(31, 67, 95, 0.3);
+}
+
+/* Click */
+.contact .btn-ghost:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(31, 67, 95, 0.2);
+}
+
+
 @media (max-width: 900px) {
   .contact-grid {
     grid-template-columns: 1fr;

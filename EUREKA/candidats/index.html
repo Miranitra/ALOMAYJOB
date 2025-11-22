@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>EUREKA Mayotte – Espace Candidat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Espace candidat EUREKA Mayotte : trouvez rapidement une mission en intérim, CDD ou CDI à Mayotte et déposez votre CV en ligne.">
+
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="/assets/css/candidat.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="Retour à l'accueil EUREKA Intérim Mayotte">
+            <img src="/assets/img/eureka/logo_eureka.webp" alt="Logo EUREKA Mayotte" class="logo-img">
+
+            <div class="logo-text-group">
+                <span class="logo-main">EUREKA</span>
+                <span class="logo-sub">Mayotte</span>
+            </div>
+        </a>
+
+
+        <nav class="main-nav" aria-label="Navigation principale">
+            <ul>
+                <li><a href="/EUREKA/index.html">Accueil</a></li>
+                <li><a href="#" class="active" aria-current="page">Candidats</a></li>
+                <li><a href="entreprises.html">Entreprises</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="contenu-principal">
+
+    <!-- ======= HERO CANDIDAT ======= -->
+    <section id="hero-candidat" class="hero hero-candidat" aria-labelledby="hero-candidat-titre">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Espace candidat</p>
+                <h1 id="hero-candidat-titre">
+                    Trouvez votre prochaine mission à Mayotte
+                </h1>
+                <p class="hero-text">
+                    Intérim, CDD ou CDI : EUREKA Mayotte vous accompagne dans votre recherche
+                    d’emploi et vous met en relation avec les entreprises qui recrutent sur le territoire.
+                </p>
+
+                <div class="hero-actions">
+                    <!-- Ces ancres pointeront plus tard vers la section formulaire / offres -->
+                    <a href="#form-candidature" class="btn btn-primary">
+                        Déposer mon CV
+                    </a>
+                    <a href="offres.html" class="btn btn-outline">
+                        Voir les offres
+                    </a>
+                </div>
+            </div>
+
+            <figure class="hero-image">
+                <img src="/assets/img/eureka/banner_eureka-400.webp"
+                     width="1200" height="400"
+                     loading="lazy"
+                     alt="Professionnels de différents métiers devant une carte stylisée de Mayotte">
+            </figure>
+        </div>
+    </section>
+
+        
+    <!-- ======= OFFRES D'EMPLOI ======= -->
+    <section id="offres" class="section-offres" aria-labelledby="offres-titre">
+    <div class="container">
+        <header class="section-header">
+        <h2 id="offres-titre" class="section-title">Offres d’emploi à Mayotte</h2>
+        <p class="section-intro">
+            Découvrez une sélection de missions proposées par EUREKA Mayotte.
+            Utilisez les critères pour filtrer les offres qui vous correspondent.
+        </p>
+        </header>
+
+        <!-- Ligne de critères de recherche -->
+        <form class="offres-filtres" role="search" aria-label="Filtrer les offres d’emploi">
+        <div class="filtre-champ">
+            <label for="filtre-mot-cle">Mot-clé</label>
+            <input type="search" id="filtre-mot-cle" name="q"
+                placeholder="Ex. : manoeuvre BTP, agent administratif…">
+        </div>
+
+        <div class="filtre-champ">
+            <label for="filtre-secteur">Secteur d’activité</label>
+            <select id="filtre-secteur" name="secteur">
+            <option value="">Tous les secteurs</option>
+            <option value="btp">BTP / Construction</option>
+            <option value="admin">Administratif / Tertiaire</option>
+            <option value="logistique">Logistique / Transport</option>
+            <option value="proprete">Propreté / Services</option>
+            <option value="restauration">Hôtellerie / Restauration</option>
+            <option value="sante">Santé</option>
+            </select>
+        </div>
+
+        <div class="filtre-champ">
+            <label for="filtre-contrat">Type de contrat</label>
+            <select id="filtre-contrat" name="contrat">
+            <option value="">Tous types</option>
+            <option value="interim">Intérim</option>
+            <option value="cdd">CDD</option>
+            <option value="cdi">CDI</option>
+            </select>
+        </div>
+
+        <div class="filtre-actions">
+            <button type="submit" class="btn btn-primary">Rechercher</button>
+        </div>
+        </form>
+
+        <!-- Liste de secteurs (tags cliquables) -->
+        <div class="secteurs-wrapper" aria-label="Raccourcis de secteurs">
+        <span class="secteurs-label">Secteurs :</span>
+        <ul class="secteurs-liste">
+            <li><button type="button" class="secteur-tag secteur-tag-actif" data-secteur="">Tous</button></li>
+            <li><button type="button" class="secteur-tag" data-secteur="btp">BTP</button></li>
+            <li><button type="button" class="secteur-tag" data-secteur="admin">Administratif</button></li>
+            <li><button type="button" class="secteur-tag" data-secteur="logistique">Logistique</button></li>
+            <li><button type="button" class="secteur-tag" data-secteur="proprete">Propreté</button></li>
+            <li><button type="button" class="secteur-tag" data-secteur="restauration">Restauration</button></li>
+            <li><button type="button" class="secteur-tag" data-secteur="sante">Santé</button></li>
+        </ul>
+        </div>
+
+        <!-- Cartes d'offres (remplies en JS depuis le JSON) -->
+        <div class="offres-liste" id="offres-liste">
+        <!-- Les cartes seront injectées ici -->
+        </div>
+
+        <!-- Pagination -->
+        <nav class="pagination" aria-label="Pagination des offres">
+          <button type="button" class="pagination-btn" id="page-prev" disabled>Précédent</button>
+          <div class="pagination-pages" id="pagination-pages"></div>
+          <button type="button" class="pagination-btn" id="page-next" disabled>Suivant</button>
+        </nav>
+
+
+    </div>
+    </section>
+
+
+
+    <!-- Les autres sections (offres, formulaire, FAQ...) viendront ici -->
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p class="footer-text">
+            © <span id="annee-courante">2025</span> EUREKA Mayotte – Partenaire emploi à Mayotte.
+        </p>
+    </div>
+</footer>
+
+<script src="offres.js"></script>
+
+<script src="pagination_offres.js"></script>
+
+</body>
+</html>
