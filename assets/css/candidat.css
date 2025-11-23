@@ -249,7 +249,6 @@ img {
   max-width: 640px;
   margin-bottom: 24px;
 }
-
 /* Trait sous les titres de section */
 .section-title {
   position: relative;
@@ -272,7 +271,6 @@ img {
   font-size: 1.6rem;
   margin: 0 0 8px;
   color: #004774; /* bleu foncé EUREKA */
-  
 }
 
 .section-offres .section-intro {
