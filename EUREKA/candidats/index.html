@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>EUREKA Mayotte – Espace Candidat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Espace candidat EUREKA Mayotte : trouvez rapidement une mission en intérim, CDD ou CDI à Mayotte et déposez votre CV en ligne.">
+
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="../../assets/css/candidat.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="Retour à l'accueil EUREKA Intérim Mayotte">
+            <img src="../../assets/img/eureka/logo_eureka.webp" alt="Logo EUREKA Mayotte" class="logo-img">
+
+            <div class="logo-text-group">
+                <span class="logo-main">EUREKA</span>
+                <span class="logo-sub">Mayotte</span>
+            </div>
+        </a>
+
+
+        <nav class="main-nav" aria-label="Navigation principale">
+            <ul>
+                <li><a href="/EUREKA/index.html">Accueil</a></li>
+                <li><a href="#" class="active" aria-current="page">Candidats</a></li>
+                <li><a href="entreprises.html">Entreprises</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="contenu-principal">
+
+    <!-- ======= HERO CANDIDAT ======= -->
+    <section id="hero-candidat" class="hero hero-candidat" aria-labelledby="hero-candidat-titre">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Espace candidat</p>
+                <h1 id="hero-candidat-titre">
+                    Trouvez votre prochaine mission à Mayotte
+                </h1>
+                <p class="hero-text">
+                    Intérim, CDD ou CDI : EUREKA Mayotte vous accompagne dans votre recherche
+                    d’emploi et vous met en relation avec les entreprises qui recrutent sur le territoire.
+                </p>
+
+                <div class="hero-actions">
+                    <!-- Ces ancres pointeront plus tard vers la section formulaire / offres -->
+                    <a href="#form-candidature" class="btn btn-primary">
+                        Déposer mon CV
+                    </a>
+                    <a href="offres.html" class="btn btn-outline">
+                        Voir les offres
+                    </a>
+                </div>
+            </div>
+
+            <figure class="hero-image">
+                <img src="/assets/img/eureka/banner_eureka-400.webp"
+                     width="1200" height="400"
+                     loading="lazy"
+                     alt="Professionnels de différents métiers devant une carte stylisée de Mayotte">
+            </figure>
+        </div>
+    </section>
+
+        
+    <!-- ======= OFFRES D'EMPLOI ======= -->
+    <section id="offres" class="section-offres" aria-labelledby="offres-titre">
+    <div class="container">
+        <header class="section-header">
+        <h2 id="offres-titre" class="section-title">Offres d’emploi à Mayotte</h2>
+        <p class="section-intro">
+            Découvrez une sélection de missions proposées par EUREKA Mayotte.
+            Utilisez les critères pour filtrer les offres qui vous correspondent.
+        </p>
+        </header>
+
+        <!-- Ligne de critères de recherche -->
+        <form class="offres-filtres" role="search" aria-label="Filtrer les offres d’emploi">
+        <div class="filtre-champ">
+            <label for="filtre-mot-cle">Mot-clé</label>
+            <input type="search" id="filtre-mot-cle" name="q"
+                placeholder="Ex. : manoeuvre BTP, agent administratif…">
+        </div>
+
+        <div class="filtre-champ">
+            <label for="filtre-secteur">Secteur d’activité</label>
+            <select id="filtre-secteur" name="secteur">
+            <option value="">Tous les secteurs</option>
+            <option value="btp">BTP / Construction</option>
+            <option value="admin">Administratif / Tertiaire</option>
+            <option value="logistique">Logistique / Transport</option>
+            <option value="proprete">Propreté / Services</option>
+            <option value="restauration">Hôtellerie / Restauration</option>
+            <option value="sante">Santé</option>
+            </select>
+        </div>
+
+        <div class="filtre-champ">
+            <label for="filtre-contrat">Type de contrat</label>
+            <select id="filtre-contrat" name="contrat">
+            <option value="">Tous types</option>
+            <option value="interim">Intérim</option>
+            <option value="cdd">CDD</option>
+            <option value="cdi">CDI</option>
+            </select>
+        </div>
+
+        <div class="filtre-actions">
+            <button type="submit" class="btn btn-primary">Rechercher</button>
+        </div>
+        </form>
+
+        <!-- Liste de secteurs (tags cliquables) -->
+        <div class="secteurs-wrapper" aria-label="Raccourcis de secteurs">
+        <span class="secteurs-label">Secteurs :</span>
+        <ul class="secteurs-liste">
+            <li><button type="button" class="secteur-tag secteur-tag-actif" data-secteur="">Tous</button></li>
+            <li><button type="button" class="secteur-tag" data-secteur="btp">BTP</button></li>
+            <li><button type="button" class="secteur-tag" data-secteur="admin">Administratif</button></li>
+            <li><button type="button" class="secteur-tag" data-secteur="logistique">Logistique</button></li>
+            <li><button type="button" class="secteur-tag" data-secteur="proprete">Propreté</button></li>
+            <li><button type="button" class="secteur-tag" data-secteur="restauration">Restauration</button></li>
+            <li><button type="button" class="secteur-tag" data-secteur="sante">Santé</button></li>
+        </ul>
+        </div>
+
+        <!-- Cartes d'offres (remplies en JS depuis le JSON) -->
+        <div class="offres-liste" id="offres-liste">
+        <!-- Les cartes seront injectées ici -->
+        </div>
+
+        <!-- Pagination -->
+        <nav class="pagination" aria-label="Pagination des offres">
+          <button type="button" class="pagination-btn" id="page-prev" disabled>Précédent</button>
+          <div class="pagination-pages" id="pagination-pages"></div>
+          <button type="button" class="pagination-btn" id="page-next" disabled>Suivant</button>
+        </nav>
+
+
+    </div>
+    </section>
+
+    <!-- ======= DÉPOSER MON CV ======= -->
+    <section id="form-candidature" class="section-candidature" aria-labelledby="candidature-titre">
+    <div class="container">
+        <header class="section-header">
+        <h2 id="candidature-titre" class="section-title">Déposer mon CV</h2>
+        <p class="section-intro">
+            Inscrivez-vous chez EUREKA Mayotte et envoyez votre CV.
+            Vous pouvez également joindre une lettre de motivation.
+        </p>
+        </header>
+
+        <form class="candidature-form" action="#" method="post" enctype="multipart/form-data">
+        
+        <!-- Bloc 1 : Inscription -->
+        <fieldset class="form-bloc">
+            <legend class="form-bloc-title">1. Informations candidat</legend>
+
+            <div class="form-grid">
+            <div class="form-field">
+                <label for="nom">Nom *</label>
+                <input type="text" id="nom" name="nom" required autocomplete="family-name" placeholder="Votre nom">
+            </div>
+
+            <div class="form-field">
+                <label for="prenom">Prénom *</label>
+                <input type="text" id="prenom" name="prenom" required autocomplete="given-name" placeholder="Votre prénom">
+            </div>
+
+            <div class="form-field">
+                <label for="telephone">Téléphone *</label>
+                <input type="tel" id="telephone" name="telephone" required autocomplete="tel"
+                    placeholder="Ex : 06 39 00 00 00">
+            </div>
+
+            <div class="form-field">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email"
+                    placeholder="exemple@mail.com">
+            </div>
+
+            <div class="form-field">
+                <label for="metier">Métier recherché *</label>
+                <input type="text" id="metier" name="metier" required placeholder="Ex : Manoeuvre BTP">
+            </div>
+
+            <div class="form-field">
+                <label for="commune">Commune / secteur *</label>
+                <input type="text" id="commune" name="commune" required placeholder="Ex : Mamoudzou">
+            </div>
+            </div>
+
+            <div class="form-field">
+            <label for="disponibilite">Disponibilité</label>
+            <select id="disponibilite" name="disponibilite">
+                <option value="">Sélectionner</option>
+                <option value="immediate">Immédiate</option>
+                <option value="1semaine">Sous 1 semaine</option>
+                <option value="2semaines">Sous 2 semaines</option>
+                <option value="1mois">Sous 1 mois</option>
+            </select>
+            </div>
+        </fieldset>
+
+        <!-- Bloc 2 : Dépôt de CV -->
+        <fieldset class="form-bloc">
+            <legend class="form-bloc-title">2. Joindre vos documents</legend>
+
+            <div class="form-grid">
+            <div class="form-field">
+                <label for="cv">CV (PDF, DOC, DOCX) *</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="cv" name="cv" required accept=".pdf,.doc,.docx">
+                    <label for="cv" class="file-input-label">Choisir un fichier</label>
+                    <span class="file-input-text" id="cv-text">Aucun fichier choisi</span>
+                </div>
+
+                <small class="form-hint">Taille max recommandée : 2 Mo</small>
+            </div>
+
+            <div class="form-field">
+                <label for="lettre">Lettre de motivation (optionnelle)</label>
+                <!-- <input type="file" id="lettre" name="lettre"
+                    accept=".pdf,.doc,.docx"> -->
+                <div class="file-input-wrapper">
+                    <input type="file" id="lettre" name="cv" required accept=".pdf,.doc,.docx">
+                    <label for="cv" class="file-input-label">Choisir un fichier</label>
+                    <span class="file-input-text" id="cv-text">Aucun fichier choisi</span>
+                </div>  
+                <small class="form-hint">Vous pouvez joindre un fichier ou écrire un message ci-dessous.</small>
+            </div>
+            </div>
+
+            <div class="form-field">
+            <label for="message">Message / Lettre de motivation (texte)</label>
+            <textarea id="message" name="message" rows="5"
+                        placeholder="Écrivez ici votre lettre de motivation ou un message pour l’agence."></textarea>
+            </div>
+        </fieldset>
+
+        <!-- Consentement -->
+        <div class="form-consent">
+            <label class="checkbox">
+            <input type="checkbox" name="consentement" required>
+            <span>
+                J’accepte que mes informations soient utilisées par EUREKA Mayotte pour traiter ma candidature.
+            </span>
+            </label>
+        </div>
+
+        <!-- Actions -->
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Envoyer ma candidature</button>
+            <p class="form-note">* Champs obligatoires</p>
+        </div>
+
+        </form>
+    </div>
+    </section>
+
+    <!-- ======= SERVICES CANDIDATS ======= -->
+    <section id="services-candidats" class="section-services" aria-labelledby="services-titre">
+    <div class="container">
+
+        <header class="section-header">
+        <h2 id="services-titre" class="section-title">Services pour les candidats</h2>
+        <p class="section-intro">
+            EUREKA Mayotte accompagne chaque candidat dans la recherche d’emploi, 
+            l’évolution professionnelle et l’accès à des opportunités locales.
+        </p>
+        </header>
+
+        <div class="services-grid">
+
+        <!-- Service 1 -->
+        <div class="service-card">
+            <img src="/assets/img/eureka/accompagnnement-1280.webp" alt="Accompagnement personnalisé" class="service-img">
+            <h3 class="service-title">Accompagnement personnalisé</h3>
+            <p class="service-text">
+            Un suivi humain et adapté pour vous aider à identifier vos forces et trouver les missions qui vous conviennent.
+            </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+            <img src="../../assets/img/eureka/matching_emploi-1280.webp" alt="Matching emploi simplifié" class="service-img">
+            <h3 class="service-title">Matching emploi simplifié</h3>
+            <p class="service-text">
+            Nous faisons correspondre vos compétences avec les besoins des entreprises locales, rapidement et efficacement.
+            </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+            <img src="../../assets/img/eureka/creation_cv-1280.webp" alt="Aide à la création de CV" class="service-img">
+            <h3 class="service-title">Aide à la création de CV</h3>
+            <p class="service-text">
+            Bénéficiez de conseils professionnels pour améliorer votre CV et attirer l’attention des recruteurs.
+            </p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card">
+            <img src="../../assets/img/eureka/acces_formation-1280.webp" alt="Accès à la formation" class="service-img">
+            <h3 class="service-title">Accès à la formation</h3>
+            <p class="service-text">
+            Formations certifiantes et programmes adaptés pour développer vos compétences et saisir de nouvelles opportunités.
+            </p>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card">
+            <img src="../../assets/img/eureka/suivi_mission-1280.webp" alt="Suivi en mission" class="service-img">
+            <h3 class="service-title">Suivi en mission</h3>
+            <p class="service-text">
+            Un accompagnement régulier tout au long de vos missions pour garantir réussite et confort professionnel.
+            </p>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card">
+            <img src="../../assets/img/eureka/gestion_adinistrative-1280.webp" alt="Gestion administrative" class="service-img">
+            <h3 class="service-title">Gestion administrative</h3>
+            <p class="service-text">
+            EUREKA gère vos contrats, fiches de paie et démarches administratives pour vous simplifier la vie.
+            </p>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+
+
+    <!-- Les autres sections (offres, formulaire, FAQ...) viendront ici -->
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p class="footer-text">
+            © <span id="annee-courante">2025</span> EUREKA Mayotte – Partenaire emploi à Mayotte.
+        </p>
+    </div>
+</footer>
+
+<script src="offres.js"></script>
+
+<script src="pagination_offres.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    function initFileInput(inputId, textId) {
+        const input = document.getElementById(inputId);
+        const text = document.getElementById(textId);
+
+        if (!input || !text) return;
+
+        input.addEventListener("change", () => {
+        if (input.files.length > 0) {
+            text.textContent = input.files[0].name;
+        } else {
+            text.textContent = "Aucun fichier choisi";
+        }
+        });
+    }
+
+    initFileInput("cv", "cv-text");
+    initFileInput("lettre", "lettre-text");
+    });
+</script>
+
+</body>
+</html>

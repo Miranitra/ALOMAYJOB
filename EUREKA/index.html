@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>EUREKA Intérim Mayotte | Agence d'intérim et recrutement</title>
+    <title>EUREKA Mayotte | Agence d'intérim et recrutement</title>
 
-    <meta name="description" content="EUREKA Intérim Mayotte accompagne les entreprises et les candidats dans le recrutement, l'intérim et la gestion des ressources humaines à Mayotte.">
+    <meta name="description" content="EUREKA Mayotte accompagne les entreprises et les candidats dans le recrutement, l'intérim et la gestion des ressources humaines à Mayotte.">
 
     <!-- Tu pourras ajouter plus de meta (og:, favicon...) plus tard -->
     <link rel="stylesheet" href="../assets/css/styles_eureka.css">
@@ -20,7 +20,7 @@
 
                 <div class="logo-text-group">
                     <span class="logo-main">EUREKA</span>
-                    <span class="logo-sub">Intérim Mayotte</span>
+                    <span class="logo-sub">Mayotte</span>
                 </div>
             </a>
 
@@ -28,7 +28,7 @@
             <nav class="main-nav" aria-label="Navigation principale">
                 <ul>
                     <li><a href="#accueil" class="nav-link" aria-current="page">Accueil</a></li>
-                    <li><a href="#candidats" class="nav-link">Candidats</a></li>
+                    <li><a href="/eureka/candidats/index.html" class="nav-link">Candidats</a></li>
                     <li><a href="#entreprises" class="nav-link">Entreprises</a></li>
                     <li><a href="#offres" class="nav-link">Offres d'emploi</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -52,7 +52,7 @@
                         dans les secteurs du BTP, des services, de la logistique, de l'environnement et bien plus encore.
                     </p>
                     <div class="hero-actions">
-                        <a href="#candidats" class="btn btn-primary">Je suis candidat</a>
+                        <a href="/eureka/candidats/index.html" class="btn btn-primary">Je suis candidat</a>
                         <a href="#entreprises" class="btn btn-secondary">Je suis une entreprise</a>
                     </div>
                 </div>
@@ -200,51 +200,154 @@
                 <!-- Offre 1 -->
                 <article class="offre-card">
                     <div class="offre-image">
-                    <img src="../assets/img/eureka/assistant_administratif.webp" alt="Agent administratif en bureau à Mayotte">
+                        <picture class="offre-image">
+  
+                        <!-- Version WebP (prioritaire) -->
+                        <source
+                            type="image/webp"
+                            srcset="
+                            ../assets/img/eureka/assistant_administratif-1280.webp 1280w,
+                            ../assets/img/eureka/assistant_administratif-960.webp 960w,
+                            ../assets/img/eureka/assistant_administratif-640.webp 640w
+                            "
+                            sizes="(max-width: 640px) 100vw,
+                                (max-width: 960px) 50vw,
+                                33vw">
+
+                        <!-- Version JPG (fallback) -->
+                        <source
+                            type="image/jpeg"
+                            srcset="
+                            ../assets/img/eureka/assistant_administratif-1280.jpg 1280w,
+                            ../assets/img/eureka/assistant_administratif-960.jpg 960w,
+                            ../assets/img/eureka/assistant_administratif-640.jpg 640w
+                            "
+                            sizes="(max-width: 640px) 100vw,
+                                (max-width: 960px) 50vw,
+                                33vw">
+
+                        <!-- Fallback ultime (obligatoire) -->
+                        <img
+                            src="../assets/img/eureka/assistant_administratif-640.jpg"
+                            alt="Agent administratif en bureau à Mayotte"
+                            width="640"
+                            height="480"
+                            loading="lazy">
+                        </picture>
+
                     </div>
                     <div class="offre-body">
-                    <h3 class="offre-name">Agent administratif (H/F)</h3>
-                    <p class="offre-meta">Mamoudzou · Intérim</p>
-                    <p class="offre-desc">
-                        Accueil, gestion de dossiers, saisie et classement au sein d’une structure locale.
-                    </p>
-                    <a href="#" class="offre-link">Voir l’offre</a>
+                        <h3 class="offre-name">Agent administratif (H/F)</h3>
+                        <p class="offre-meta">Mamoudzou · Intérim</p>
+                        <p class="offre-desc">
+                            Accueil, gestion de dossiers, saisie et classement au sein d’une structure locale.
+                        </p>
+                        <a href="#" class="offre-link">Voir l’offre</a>
                     </div>
                 </article>
 
                 <!-- Offre 2 -->
                 <article class="offre-card">
                     <div class="offre-image">
-                    <img src="../assets/img/eureka/manoeuvre_BTP.webp" alt="Manœuvre BTP sur chantier à Mayotte">
+                        <picture class="offre-image">
+  
+                        <!-- Version WebP (prioritaire) -->
+                        <source
+                            type="image/webp"
+                            srcset="
+                            ../assets/img/eureka/manoeuvre_BTP-1280.webp 1280w,
+                            ../assets/img/eureka/manoeuvre_BTP-960.webp 960w,
+                            ../assets/img/eureka/manoeuvre_BTP-640.webp 640w
+                            "
+                            sizes="(max-width: 640px) 100vw,
+                                (max-width: 960px) 50vw,
+                                33vw">
+
+                        <!-- Version JPG (fallback) -->
+                        <source
+                            type="image/jpeg"
+                            srcset="
+                            ../assets/img/eureka/manoeuvre_BTP-1280.jpg 1280w,
+                            ../assets/img/eureka/manoeuvre_BTP-960.jpg 960w,
+                            ../assets/img/eureka/manoeuvre_BTP-640.jpg 640w
+                            "
+                            sizes="(max-width: 640px) 100vw,
+                                (max-width: 960px) 50vw,
+                                33vw">
+
+                        <!-- Fallback ultime (obligatoire) -->
+                        <img
+                            src="../assets/img/eureka/manoeuvre_BTP-640.jpg"
+                            alt="Manœuvre BTP sur chantier à Mayotte"
+                            width="640"
+                            height="480"
+                            loading="lazy">
+                        </picture>
+
                     </div>
                     <div class="offre-body">
-                    <h3 class="offre-name">Manœuvre BTP (H/F)</h3>
-                    <p class="offre-meta">Koungou · Intérim</p>
-                    <p class="offre-desc">
-                        Aide sur chantier, manutention, préparation des matériaux et nettoyage des zones de travail.
-                    </p>
-                    <a href="#" class="offre-link">Voir l’offre</a>
+                        <h3 class="offre-name">Manœuvre BTP (H/F)</h3>
+                        <p class="offre-meta">Koungou · Intérim</p>
+                        <p class="offre-desc">
+                            Aide sur chantier, manutention, préparation des matériaux et nettoyage des zones de travail.
+                        </p>
+                        <a href="#" class="offre-link">Voir l’offre</a>
                     </div>
                 </article>
 
                 <!-- Offre 3 -->
                 <article class="offre-card">
                     <div class="offre-image">
-                    <img src="../assets/img/eureka/chauffeur_livreur.webp" alt="Livreur véhicule léger à Mayotte">
+                       
+                        <picture class="offre-image">
+  
+                            <!-- Version WebP (prioritaire) -->
+                            <source
+                                type="image/webp"
+                                srcset="
+                                ../assets/img/eureka/chauffeur_livreur-1280.webp 1280w,
+                                ../assets/img/eureka/chauffeur_livreur-960.webp 960w,
+                                ../assets/img/eureka/chauffeur_livreur-640.webp 640w
+                                "
+                                sizes="(max-width: 640px) 100vw,
+                                    (max-width: 960px) 50vw,
+                                    33vw">
+
+                            <!-- Version JPG (fallback) -->
+                            <source
+                                type="image/jpeg"
+                                srcset="
+                                ../assets/img/eureka/chauffeur_livreur-1280.jpg 1280w,
+                                ../assets/img/eureka/chauffeur_livreur-960.jpg 960w,
+                                ../assets/img/eureka/chauffeur_livreur-640.jpg 640w
+                                "
+                                sizes="(max-width: 640px) 100vw,
+                                    (max-width: 960px) 50vw,
+                                    33vw">
+
+                            <!-- Fallback ultime (obligatoire) -->
+                            <img
+                                src="../assets/img/eureka/chauffeur_livreur-640.jpg"
+                                alt="Livreur véhicule léger à Mayotte"
+                                width="640"
+                                height="480"
+                                loading="lazy">
+                        </picture>
+
                     </div>
                     <div class="offre-body">
-                    <h3 class="offre-name">Livreur VL (H/F)</h3>
-                    <p class="offre-meta">Petite-Terre · CDD</p>
-                    <p class="offre-desc">
-                        Livraisons locales, relation clients et respect des tournées définies par l’entreprise.
-                    </p>
-                    <a href="#" class="offre-link">Voir l’offre</a>
+                        <h3 class="offre-name">Livreur VL (H/F)</h3>
+                        <p class="offre-meta">Petite-Terre · CDD</p>
+                        <p class="offre-desc">
+                            Livraisons locales, relation clients et respect des tournées définies par l’entreprise.
+                        </p>
+                        <a href="#" class="offre-link">Voir l’offre</a>
                     </div>
                 </article>
                 </div>
 
                 <div class="offres-actions">
-                <a href="#" class="offres-all-link">Voir toutes nos offres</a>
+                    <a href="#" class="offres-all-link">Voir toutes nos offres</a>
                 </div>
             </div>
         </section>
@@ -273,8 +376,41 @@
                 <article class="team-card">
                     <div class="team-image">
                         <!-- Mets ici le bon chemin de ton image -->
-                        <img src="../assets/img/eureka/equipe_eureka.webp" 
-                            alt="Équipe de recrutement d’EUREKA Intérim Mayotte accueillant un candidat">
+                        
+                        <picture class="offre-image">
+  
+                            <!-- Version WebP (prioritaire) -->
+                            <source
+                                type="image/webp"
+                                srcset="
+                                ../assets/img/eureka/equipe_eureka-1280.webp 1280w,
+                                ../assets/img/eureka/equipe_eureka-960.webp 960w,
+                                ../assets/img/eureka/equipe_eureka-640.webp 640w
+                                "
+                                sizes="(max-width: 640px) 100vw,
+                                    (max-width: 960px) 50vw,
+                                    33vw">
+
+                            <!-- Version JPG (fallback) -->
+                            <source
+                                type="image/jpeg"
+                                srcset="
+                                ../assets/img/eureka/equipe_eureka-1280.jpg 1280w,
+                                ../assets/img/eureka/equipe_eureka-960.jpg 960w,
+                                ../assets/img/eureka/equipe_eureka-640.jpg 640w
+                                "
+                                sizes="(max-width: 640px) 100vw,
+                                    (max-width: 960px) 50vw,
+                                    33vw">
+
+                            <!-- Fallback ultime (obligatoire) -->
+                            <img
+                                src="../assets/img/eureka/equipe_eureka-640.jpg"
+                                alt="Équipe de recrutement d’EUREKA Intérim Mayotte accueillant un candidat"
+                                width="640"
+                                height="480"
+                                loading="lazy">
+                        </picture>
                     </div>
                     <div class="team-body">
                         <h2 class="team-title-colored">Une équipe engagée</h2>
@@ -418,7 +554,7 @@
             <div class="footer-brand">
             <img src="../assets/img/eureka/logo_eureka_dore.png" alt="Logo ALOMAYJOB Holding" class="footer-logo" loading="lazy">
             <p>
-                ALOMAYJOB Holding regroupe plusieurs entités dédiées à la formation, à l’emploi et au développement durable à Mayotte.
+                EREKA MAYOTTE - Solutions pour l'emploi, l'insertion, l'intérim, et le recrutement.
             </p>
             </div>
 
