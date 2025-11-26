@@ -181,39 +181,139 @@
 
                 <div class="process-grid">
 
-                <article class="process-step reveal-soft">
-                    <span class="process-number" aria-hidden="true">1</span>
-                    <h3 class="process-step-title">Vous exprimez votre besoin</h3>
-                    <p class="process-step-text">
-                    Poste recherché, durée, compétences, nombre de personnes et date de démarrage.
-                    </p>
-                </article>
+                    <article class="process-step reveal-soft" >
+                        <picture class="process-img">
+                            <source srcset="../../assets/img/eureka/expression_besoin-1280.webp" media="(min-width: 1024px)">
+                            <source srcset="../../assets/img/eureka/expression_besoin-960.webp" media="(min-width: 640px)">
+                            <source srcset="../../assets/img/eureka/expression_besoin-640.webp" media="(max-width: 639px)">
+                            <img src="../../assets/img/eureka/expression_besoin-960.webp" alt="Vous exprimez votre besoin" loading="lazy">
+                        </picture>
 
-                <article class="process-step reveal-soft">
-                    <span class="process-number" aria-hidden="true">2</span>
-                    <h3 class="process-step-title">Nous sélectionnons les profils</h3>
-                    <p class="process-step-text">
-                    Présélection, vérification et évaluation selon votre secteur et vos exigences.
-                    </p>
-                </article>
+                        <div class="process-content" data-step="1">
+                            <h3 class="process-step-title">Vous exprimez votre besoin</h3>
+                            <p class="process-step-text">Poste recherché, durée, compétences…</p>
+                        </div>
+                    </article>
 
-                <article class="process-step reveal-soft">
-                    <span class="process-number" aria-hidden="true">3</span>
-                    <h3 class="process-step-title">Mise à disposition / Recrutement</h3>
-                    <p class="process-step-text">
-                    Démarrage rapide de la mission ou intégration sécurisée pour un recrutement durable.
-                    </p>
-                </article>
+                    <article class="process-step reveal-soft" >
+                        <picture class="process-img">
+                            <source srcset="../../assets/img/eureka/selection_profil-1280.webp" media="(min-width: 1024px)">
+                            <source srcset="../../assets/img/eureka/expression_besoin-960.webp" media="(min-width: 640px)">
+                            <source srcset="../../assets/img/eureka/selection_profil-640.webp" media="(max-width: 639px)">
+                            <img src="../../assets/img/eureka/selection_profil-960.webp" alt="Vous exprimez votre besoin" loading="lazy">
+                        </picture>
 
-                <article class="process-step reveal-soft">
-                    <span class="process-number" aria-hidden="true">4</span>
-                    <h3 class="process-step-title">Suivi et accompagnement</h3>
-                    <p class="process-step-text">
-                    Un interlocuteur unique assure le suivi qualité tout au long de la collaboration.
-                    </p>
-                </article>
+                        <div class="process-content" data-step="2">
+                            <h3 class="process-step-title">Nous sélectionnons les profils</h3>
+                            <p class="process-step-text">Présélection, vérification et évaluation selon votre secteur et vos exigences.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="process-step reveal-soft" >
+                        <picture class="process-img">
+                            <source srcset="../../assets/img/eureka/mise_disposition_recrutement-1280.webp" media="(min-width: 1024px)">
+                            <source srcset="../../assets/img/eureka/mise_disposition_recrutement-960.webp" media="(min-width: 640px)">
+                            <source srcset="../../assets/img/eureka/mise_disposition_recrutement-640.webp" media="(max-width: 639px)">
+                            <img src="../../assets/img/eureka/mise_disposition_recrutement-960.webp" alt="Vous exprimez votre besoin" loading="lazy">
+                        </picture>
+
+                        <div class="process-content" data-step="3">
+                            <h3 class="process-step-title">Mise à disposition du personnel</h3>
+                            <p class="process-step-text">Démarrage rapide de la mission ou intégration sécurisée pour un recrutement durable.</p>
+                        </div>
+                    </article>
+
+
+                    <article class="process-step reveal-soft" >
+                        <picture class="process-img">
+                            <source srcset="../../assets/img/eureka/accompagnement-1280.webp" media="(min-width: 1024px)">
+                            <source srcset="../../assets/img/eureka/accompagnement-960.webp" media="(min-width: 640px)">
+                            <source srcset="../../assets/img/eureka/accompagnement-640.webp" media="(max-width: 639px)">
+                            <img src="../../assets/img/eureka/accompagnement-960.webp" alt="Vous exprimez votre besoin" loading="lazy">
+                        </picture>
+
+                        <div class="process-content" data-step="4">
+                            <h3 class="process-step-title">Suivi & accompagnement</h3>
+                            <p class="process-step-text">Un interlocuteur unique assure le suivi qualité tout au long de la collaboration.</p>
+                        </div>
+                    </article>
 
                 </div>
+
+            </div>
+        </section>
+
+        <!-- ======= Déposer une demande ======= -->
+        <section id="demande-entreprise" class="section-demande" aria-labelledby="demande-title">
+            <div class="container">
+
+                <header class="section-header">
+                    <h2 id="demande-title" class="section-title">Déposer une demande de personnel</h2>
+                    <p class="section-intro">
+                        Décrivez votre besoin en personnel, un conseiller EUREKA vous recontactera rapidement.
+                    </p>
+                </header>
+
+                <form class="demande-form" action="#" method="post" novalidate>
+                    <div class="demande-grid">
+
+                        <div class="form-group">
+                            <label for="entreprise-nom">Nom de l’entreprise <span class="required">*</span></label>
+                            <input id="entreprise-nom" name="entreprise-nom" type="text" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="secteur-activite">Secteur d’activité</label>
+                            <input id="secteur-activite" name="secteur-activite" type="text" placeholder="BTP, administration, commerce…">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-nom">Nom / Prénom du contact <span class="required">*</span></label>
+                            <input id="contact-nom" name="contact-nom" type="text" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-fonction">Fonction</label>
+                            <input id="contact-fonction" name="contact-fonction" type="text" placeholder="Responsable RH, dirigeant…">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email">Email <span class="required">*</span></label>
+                            <input id="contact-email" name="contact-email" type="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-tel">Téléphone <span class="required">*</span></label>
+                            <input id="contact-tel" name="contact-tel" type="tel" required>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="poste-recherche">Poste(s) recherché(s) <span class="required">*</span></label>
+                            <input id="poste-recherche" name="poste-recherche" type="text" placeholder="Ex : Manoeuvre BTP, agent administratif…" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nb-personnes">Nombre de personnes</label>
+                            <input id="nb-personnes" name="nb-personnes" type="number" min="1" step="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date-debut">Date de début souhaitée</label>
+                            <input id="date-debut" name="date-debut" type="date">
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="besoin-detail">Précisions sur le besoin <span class="required">*</span></label>
+                            <textarea id="besoin-detail" name="besoin-detail" rows="5" required placeholder="Contexte de la mission, horaires, compétences spécifiques, contraintes…"></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="demande-footer">
+                        <p class="form-note"><span class="required">*</span> Champs obligatoires</p>
+                        <button type="submit" class="btn btn-primary btn-submit">Envoyer ma demande</button>
+                    </div>
+                </form>
 
             </div>
         </section>
@@ -221,6 +321,68 @@
 
     </main>
 
+    <footer class="site-footer" aria-label="Pied de page ALOMAYJOB Holding">
+        <div class="container footer-grid">
+
+            <!-- Colonne 1 : Logo + présentation -->
+            <div class="footer-brand">
+            <img src="../../assets/img/eureka/logo_eureka_dore.png" alt="Logo ALOMAYJOB Holding" class="footer-logo" loading="lazy">
+            <p>
+                EREKA MAYOTTE - Solutions pour l'emploi, l'insertion, l'intérim, et le recrutement.
+            </p>
+            </div>
+
+            <!-- Colonne 2 : Liens du menu -->
+            <nav class="footer-nav" aria-label="Liens utiles">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#apropos">Candidats</a></li>
+                <li><a href="#valeurs">Entreprises</a></li>
+                <li><a href="#entites">Offres d'emploi</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            </nav>
+
+            <!-- Colonne 3 : Coordonnées -->
+            <div class="footer-contact">
+            <h3>Contact</h3>
+            <ul>
+                <li><i class="icon">📧</i> <a href="mailto:contact@tondomaine.com">contact@alomayjob.com</a></li>
+                <li><i class="icon">📞</i> <a href="tel:+262XXXXXXX">+262 6 39 61 38 39</a></li>
+                <li><i class="icon">📍</i> Mayotte (976)</li>
+            </ul>
+            <div class="contact-social">
+                <h3>Réseaux</h3>
+
+                <ul class="social-links social-inline">
+                <li>
+                    <a href="#" aria-label="LinkedIn ALOMAYJOB">
+                    <img src="../../assets/img/social/logo_linkedin_trans.png" alt="Logo LinkedIn" class="social-icon">
+                    LinkedIn
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" aria-label="Facebook ALOMAYJOB">
+                    <img src="../../assets/img/social/logo_facebook.png" alt="Logo Facebook" class="social-icon">
+                    Facebook
+                    </a>
+                </li>
+                </ul>
+
+            </div>
+
+
+            </div>
+
+        </div>
+
+        <!-- Ligne du bas -->
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> EUREKA Mayotte — Tous droits réservés</p>
+            <p><a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a></p>
+        </div>
+    </footer>
 
     <!-- JS menu mobile minimal (si tu as déjà un main.js, tu peux supprimer ça) -->
     <script>
